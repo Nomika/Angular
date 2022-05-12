@@ -1,0 +1,586 @@
+//let x = "Hello World";
+//console.log(x);
+///STRING
+/*const myString1="string";
+const myString2: string= "string";
+
+let myString3: string;
+myString3 = "String";
+//myString3= 1;//ERROR
+console.log(myString1);
+console.log(myString2);
+console.log(myString3);*/
+/*let x: string = "Hello world";
+console.log(x);
+
+let y: number = 1;
+console.log(y);
+
+x = "cos";
+console.log(x);
+
+const myObj1= {prop1: "value1"};
+const myObj2: object= {prop2: "value2"};
+
+//OBJECT
+
+let myObj3: object;
+    myObj3= {prop3: true};
+    //myObj3= 'string';//ERROR
+
+    console.log(myObj1);
+    console.log(myObj2);
+    console.log(myObj3);*/
+/*const myNumber1 = 1;
+const myNumber2: number = 2.0;
+
+
+//NUMBER
+let myNumber3: number;
+myNumber3 = 3.5;
+// myNumber3 = 'string';//ERROR
+console.log(myNumber1);
+console.log(myNumber2);
+console.log(myNumber3);*/
+//ENUM
+/*enum MyEnum1 {
+    VALUE_1,
+    VALUE_2,
+    VALUE_3
+}*/
+/* enum MyEnum1 {
+     VALUE_1= "Wartość 1",
+     VALUE_2= "Wartość 2",
+     VALUE_3= "Wartość 3"
+ }*/
+/*const myEnum = MyEnum1.VALUE_1;
+const myEnum1 = MyEnum1.VALUE_2;
+console.log(myEnum);
+console.log(myEnum1);*/
+//ANY
+/*let x: any = "Hrjka";
+console.log(x);
+
+x = 1;
+
+console.log(x);*/
+//FUNKCJE
+/*function fn(x: string, y: number):string {
+  return `${x}: ${y}`;
+}
+
+
+console.log(fn(x:"cos", y:10));*/
+/*function nfName(x) {
+    console.log(x);
+}
+
+nfName(x:'ten')*/
+//UNION TYPES
+/*let myVar: string | number = 'string';
+console.log(myVar);
+
+myVar=1;
+console.log(myVar);
+
+//myVar = true;//ERROR*/
+/*let xV: string | boolean = "Hello world";
+console.log(xV);
+xV=true;
+console.log(xV);
+
+let yN: number = 1;
+console.log(yN);
+
+xV = true;//ERROR*/
+//ALIASES
+//type stringOrNumber = string | number;
+/*function fn1(x:string | string[]) {
+    if (typeof x === "string") {
+        x=[x];
+    }
+    // x== array
+    return;
+}
+
+function fn2(x:string) {
+    return fn1(x:[x]);
+}*/
+/*let x: stringOrNumber = 'Hello world';
+console.log(x);
+
+x = 1;
+console.log(x);
+
+
+type stringOfBoolean = string | boolean;
+
+let y: stringOfBoolean = 'Hello world';
+console.log(y);
+
+y = true;
+console.log(y);*/
+//INTERFEJSY
+/*interface Person {
+    name:string;
+    lastname?: string;
+    age: number;
+    fullname(): string;
+    fullnames(): string;
+}
+
+let p: Person = {
+    name: "Mateusz",
+    lastname: "Lewandowski",
+    age: 18,
+    fullname(): string {
+        return `${this.name} ${this.lastname || ''}`;
+    }
+}
+
+console.log(p);
+console.log(p.fullname());
+
+let p2: Person  = {
+    name: "Krysia",
+    age: 18,
+    fullnames(): string {
+        return `${this.name} ${this.lastname}`;
+    }
+}
+
+console.log(p2);
+console.log(p2.fullnames());
+p2.lastname = "Saczewska"
+console.log(p2.fullnames());*/
+//KLASY
+/*class Person {
+    name: string;
+    lastname: string;
+    age: number;
+}
+
+const p: Person = new Person();
+p.name = "Monika";
+p.lastname= "Kowalska";
+p.age = 34;
+console.log(`${p.name} ${p.age}`);
+
+let p2: Person;
+p2 = new Person();
+
+p2.name = "Magik";
+p2.lastname = "Maciejka";
+p2.age = 54;
+
+console.log(p2.lastname);
+console.log(p2);*/
+//KLASY Z METODAMI
+/*class Osoba {
+    imie: string;
+    nazwisko: string;
+    wiek: number;
+   fullname(): string {
+       return `${this,this.imie} ${this.nazwisko} ${this.wiek}`;
+   };
+}
+ const z: Osoba = new Osoba();
+ z.imie = "Maciej";
+ z.nazwisko = "Klaudiusz";
+ z.wiek = 89;
+ console.log(`${z.fullname()}`);*/
+//KLASY MODYFIKATORY DOSTĘPU
+/*class Czlowiek {
+    public imie: string;
+    public nazwisko: string;
+    public wiek: number;
+    public print() {
+        return `${this.fullname()} (${this.wiek})`;
+    }
+    private fullname(): string {
+        return `${this.imie} ${this. nazwisko}`;
+    };
+}
+const pole: Czlowiek = new Czlowiek();
+pole.imie = 'Kalol';
+pole.nazwisko = "Dabrowski";
+pole.wiek = 67;
+console.log(`${pole.print()}`);
+//console.log(`${pole.fullname()}`);//ERROR*/
+//KLASY- KONSTRUKTOR
+/*class Person {
+    public name: string;
+    public lastname: string;
+    public age: number;
+
+    constructor(name: string, lastname: string, age: number) {
+        this.name = name;
+        this. lastname = lastname;
+        this. age = age;
+    }
+    }
+const z: Person = new Person("Maatka", "Polka", 54);
+console.log(`${z.name} ${z.lastname} ${z.age}`);*/
+/*class Person {
+   private name: string;
+   private lastname: string;
+   private age: number;
+   
+   constructor(name: string, lastname: string, age: number) {
+       this.name = name;
+       this. lastname = lastname;
+       this. age = age;
+   }
+
+   public fullname() {
+       return `${this.name} ${this.lastname}`;
+   }
+   }
+const z: Person = new Person("Maatka", "Polka", 54);
+console.log(`${z.fullname()}`);*/
+/*class Person {
+    constructor(
+        private name: string,
+        private lastname: string,
+        age: number)
+    {
+        console.log(name);
+        console.log(age);
+    }
+
+    public fullname() {
+        this.age = age;///Property to nie istnieje w PERSON, bo nie jest określony modyfikatorem dostępu
+        return `${this.name} ${this.lastname}`;
+    }
+    }
+const z: Person = new Person("Maatka", "Polka", 54);
+console.log(`${z.fullname()}`);*/
+//KLASY - GETTERY I SETTERY
+/*class Panic {
+    private name: string;
+    public age: number;
+    private lname: string;
+
+    public set lastname(na: string) {
+        this.lname = na.toUpperCase();
+    }
+    public get lastname(): string {
+        return this.lname;
+    }
+
+}
+ const p: Panic = new Panic();
+ p.imie = "Macierka";
+ p.lastname = "Panierka";
+ console.log(`${p.imie} ${p.lastname} ${p.lname}`);*/
+/*class Panic {
+   public name: string;
+   public age: number;
+   private lname: string;
+
+   constructor (name: string, lastname: string) {
+       this.name = name;
+       this.lname = lastname;
+   }
+
+   public set lastname(na: string) {
+       this.lname = na.toUpperCase();
+   }
+   public get lastname(): string {
+       return this.lname;
+   }
+
+}
+const p: Panic = new Panic("Mati", "Miciuś");
+p.imie = "Macierka";
+//p.lastname = "Panierka";
+console.log(`${p.imie} ${p.lastname} ${p.lastname}`);*/
+//ZADANIE 1
+/*interface Preson {
+   name: string;
+   lastname: string;
+   age: number;
+   gender: string;
+   print(): string;
+}
+
+let p: Preson = {
+    name: "Monika",
+    lastname: "Kowalska",
+    age: 45,
+    gender: "woman",
+    print(): string {
+       return `${this.name} ${this.lastname} ${this.gender || ''}`;
+   }
+}
+//console.log(p);
+console.log(p.print());*/
+//Zadanie 2
+/*enum Zadanie {
+    MALE_1= "Kobieta",
+    FEMALE_2= "Mężczyzna"
+}
+
+const Zadanie1 = Zadanie.MALE_1;
+console.log(Zadanie1);
+
+const Zadanie2 = Zadanie.FEMALE_2;
+console.log(Zadanie2);*/
+// Zadanie 3
+/*interface Student {
+    imie: string;
+    nazwisko: string;
+    numer_studenta: number;
+    ocena: number;
+}
+ 
+let Student1: Student = {
+    imie: "Marcin",
+    nazwisko: "Lamański",
+    numer_studenta: 3456,
+    ocena: 4,
+}
+
+let Student2: Student = {
+    imie: "Magda",
+    nazwisko: "Lewandowska",
+    numer_studenta: 6542,
+    ocena: 4,
+}
+let Student3: Student = {
+    imie: "Monika",
+    nazwisko: "Warszawa",
+    numer_studenta: 5489,
+    ocena: 5,
+}
+
+console.log(Student1, Student2, Student3);*/
+//Zadanie 4
+/*interface Pracownik {
+    imie: string;
+    nazwisko: string;
+    zarobki: number;
+}
+ let pracownik1: Pracownik = {
+    imie: "Magdalena",
+    nazwisko: "Klajman",
+    zarobki: 3540
+ }
+ let pracownik2: Pracownik = {
+    imie: "Karol",
+    nazwisko: "Dabrowski",
+    zarobki: 2598
+ }
+ let pracownik3: Pracownik = {
+    imie: "Natalia",
+    nazwisko: "Zarębska",
+    zarobki: 5214
+ }
+
+ console.log(pracownik1);
+ console.log(pracownik2);
+ console.log(pracownik3);*/
+//Zadanie 5
+/*interface Person {
+    public wlosy: string;
+    public wzrost: number;
+}
+
+class ParsonImpl implements Person {
+    public name: string;
+    public lastname: string;
+    public age: number;
+}
+
+let Pirson: ParsonImpl = {
+    name: "Monika",
+    lastname: "Nazwisko",
+    age: 23,
+    wlosy: "blond",
+    wzrost: 87
+}
+
+console.log(Pirson);*/
+//Zadanie 6
+/*interface Person {
+   wlosy: string;
+   wzrost: number;
+}
+
+class StudentImpl implements Person {
+    public name: string;
+    public lastname: string;
+    public age: number;
+}
+
+class PracownikImpl implements Person {
+    public name: string;
+    public lastname: string;
+    public age: number;
+}
+
+let Prson: StudentImpl = {
+    name: "Karolina",
+    lastname: "Malinowska",
+    age: 65
+    
+}
+
+let Pierson: PracownikImpl = {
+    name: "Monika",
+    lastname: "Nazwisko",
+    age: 23,
+    wlosy: "blond",
+    wzrost: 87
+}
+
+console.log(Prson);
+console.log(Pierson);*/
+//Zadanie 7
+/*interface Person {
+    wlosy: string;
+    wzrost: number;
+    age: number;
+    sex: Zadanie;
+    print(): string;
+
+    constructor(wlosy: string, lwzrost: string, age: number) {
+        this.wlosy = wlosy;
+        this.wzrost = wzrost;
+        this.age = age;
+    }
+}
+const z: Person = new Person("Maatka", "Polka", 54);
+console.log(`${z.name} ${z.lastname} ${z.age}`);
+
+ 
+ interface StudentImpl extends Person {
+     grades: number[];
+ }
+ 
+ interface PracownikImpl extends Person {
+    salary: number[];
+}
+
+ class Person implements Person {
+     public firstname: string;
+     public lastname: string;
+     public age: number;
+     public sex: Zadanie;
+ }
+ 
+public print(): string {
+    return `${this.firstname} ${this.lastname} (age: ${this.age}, sex: ${this.sex})`;
+}
+*/
+/*public print(): string {
+    return `${super.print()}, grades: ${this.grades avg_grade: ${this.averageGrade()}`;
+}
+    
+
+public averageGrade():number {
+    let sun = 0;
+    for (let i of this.grades) {
+        sun +=1;
+    }
+    return sum / this.grades.length;
+    }
+}
+
+//
+
+/*class Person {
+   private name: string;
+   private lastname: string;
+   private age: number;
+   
+   constructor(name: string, lastname: string, age: number) {
+       this.name = name;
+       this.lastname = lastname;
+       this.age = age;
+   }
+
+   public fullname() {
+       return `${this.name} ${this.lastname}`;
+   }
+   }
+const z: Person = new Person("Maatka", "Polka", 54);
+console.log(`${z.fullname()}`);*/
+/*class Person {
+   constructor(
+       private name: string,
+       private lastname: string,
+       age: number)
+   {
+       console.log(name);
+       console.log(age);
+   }
+
+   public fullname() {
+       this.age = age;///Property to nie istnieje w PERSON, bo nie jest określony modyfikatorem dostępu
+       return `${this.name} ${this.lastname}`;
+   }
+   }
+const z: Person = new Person("Maatka", "Polka", 54);
+console.log(`${z.fullname()}`);*/
+/*import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+     public static void main(String[] args) {
+         final int index = 5;
+
+         List<int[]> dane = new ArrayList<>();
+         dane.add(new int[]{1,2,3});
+         dane.add(new int[]{-10,5,7});
+
+         for(int i=0; i<dane.size(); i++){
+             int d = delta(dane.get(i)[0], dane.get(i)[1], dane.get(i)[2]);
+             int z = policzMiejsca(dane.get(i)[0], dane.get(i)[1], dane.get(i)[2]);
+         }
+     }
+
+     protected static int delta(int x, int y, int z) {
+         int d = (y * y )- (4 * x * z);
+         return d;}
+
+     private static final void policzMiejsca(int d, int x, int y, int z) {
+         if (d == 0) {
+             System.out.println("Jedno rozwiązanie: " + (-y / 2 * x));
+         } else {
+             System.out.println("Dwa rozwiązania: "+ ((-y-d^1/2)/2*x)+ " i "+ ((-y+d^1/2)/2*x));
+         }
+     }
+}*/
+//const baseValues = {name: "john", surname: "kowalski"};
+//let female = baseValues;
+//female.name = 'Amy';
+//let result = baseValues;
+/*interface Animal {
+    name: string;
+    height: number;
+    jumpLength?: number;
+}
+
+class Cat  implements Animal{
+    name = "000";
+    height = 50;
+
+    constructor(name: string, height: number) {
+        this.name = name;
+        this.height = height;
+    }
+}
+const cat: Cat = new Cat('KittyTheCat', 34);*/
+Object.prototype.city = "Gdańsk";
+var Aspire = function () {
+    this.bartek = "Java";
+    this.tomek = "css";
+    this.waldek = 'html';
+};
+var aspire = new Aspire();
+for (var name in aspire) {
+    if (aspire.indexOf(name))
+        console.log('pracownik' + name + "libi" + aspire[name]);
+}
